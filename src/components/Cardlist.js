@@ -2,10 +2,9 @@ import React from 'react';
 import Card from './Card';
 
 const Cardlist = ({ robots }) => {
-    if (true) {
-//     throw "THIS IS ThROW";
+ /*   if (true) {
         throw new Error('NOOOOOO');
-    }
+    }*/
     return (
         <div>
         {

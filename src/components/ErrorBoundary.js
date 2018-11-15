@@ -22,15 +22,11 @@ class Errorboundary extends Component {
     }
 
     render() {
-        if (this.state.hasError) {
-             return <h1>Ooops. That is not gooood at all.</h1>
-         }
-         return this.props.children
-        /*return (
+        return (
             this.state.hasError ? 
                 <h1>Ooops. That is not gooood at all.</h1> 
                 : this.props.children
-        )*/
+        )
     }
 }
 export default Errorboundary;
