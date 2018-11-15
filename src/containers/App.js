@@ -4,6 +4,7 @@ import Cardlist from '../components/Cardlist';
 import SearchBox from '../components/SearchBox';
 //import { robots } from './Robots';
 import Scroll from '../components/Scroll';
+import Errorboundary from '../components/ErrorBoundary';
 
 class App extends Component {
 
@@ -42,13 +43,15 @@ class App extends Component {
                     return (*/
         return !robots.length ? <h1>Loading...</h1> :
             (
-            <div className='tc'>
-                <h1 className='f2'>RoboFriends</h1>
-                <SearchBox searchChange={this.searchChanges} />
-                <Scroll>
-                    <Cardlist robots={filteredRobots} />
-                </Scroll>
-            </div>
+                <div className='tc'>
+                    <h1 className='f2'>RoboFriends</h1>
+                    <SearchBox searchChange={this.searchChanges} />
+                    <Scroll>
+                        <Errorboundary>
+                            <Cardlist robots={filteredRobots} />
+                        </Errorboundary>
+                    </Scroll>
+                </div>
             );
     }
 
